@@ -1,36 +1,40 @@
-<template name="orionBootstrapAccountIndex">
-  {{# Layout template="orionBootstrapSmallContentOffset" }}
-    {{# Layout template="orionBootstrapTitle" }}
+<template name="orionAccountIndex">
+  {{# Layout template="orionSmallContentOffset" }}
+
+    {{# Layout template="orionTitle" }}
       {{ i18n 'accounts.myAccount.title' }}
     {{/ Layout }}
 
-    {{# Layout template="orionBootstrapContentContainer" }}
-      <div class="row">
+    {{# Layout template="orionContentContainer" }}
+
+      <div class="orion profile">
         {{# if currentUser.profile.picture }}
-          <div class="col-sm-2">
-            <p>
-              <img class="profile-picture" src="{{ currentUser.profile.picture.url }}">
-            </p>
+          <div class="orion image container">
+            <img class="orion image" src="{{ currentUser.profile.picture.url }}">
           </div>
         {{/ if }}
-        <div class="col-sm-10">
-          <p><b>{{ currentUser.profile.name }}</b></p>
+
+        <div class="orion user container">
+          <p class="orion text">
+            <strong>{{ currentUser.profile.name }}</strong>
+          </p>
           {{# each currentUser.emails }}
-            <p>{{ address }}</p>
+            <p class="orion text">{{ address }}</p>
           {{/ each }}
-          <p>
-          {{# each currentUser.roles }}
-            <span class="label label-danger">{{ this }}</span>
-          {{/ each }}
+          <p class="orion text">
+            {{# each currentUser.roles }}
+              <span class="orion label">{{ this }}</span>
+            {{/ each }}
           </p>
         </div>
       </div>
-      <hr>
-      <div class="buttons">
-        <a class="btn btn-default btn-xs logout">{{ i18n 'global.logout' }}</a>
-        <a href="{{ pathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.updateProfile.title' }}</a>
-        <a href="{{ pathFor 'myAccount.password' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.changePassword.title' }}</a>
+
+      <div class="orion actions">
+        <a class="orion logout button">{{ i18n 'global.logout' }}</a>
+        <a href="{{ pathFor 'myAccount.profile' }}" class="orion button">{{ i18n 'accounts.updateProfile.title' }}</a>
+        <a href="{{ pathFor 'myAccount.password' }}" class="orion button">{{ i18n 'accounts.changePassword.title' }}</a>
       </div>
+
     {{/ Layout }}
   {{/ Layout }}
 </template>
