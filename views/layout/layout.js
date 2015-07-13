@@ -1,21 +1,21 @@
-Template.orionBootstrapLayout.events({
-  'click .orion-bootstrap-admin.toggled': function() {
-    $(".orion-bootstrap-admin").removeClass("toggled");
+Template.orionLayout.events({
+  'click .orion.admin.toggled': function() {
+    $(".orion.admin").removeClass("toggled");
     $("html,body").removeClass("no-overflow");
   },
-  'click .menu-toggle': function () {
-    $(".orion-bootstrap-admin").toggleClass("toggled");
+  'click .menu.toggle': function () {
+    $(".orion.admin").toggleClass("toggled");
     $("html,body").toggleClass("no-overflow");
   }
 });
 
-Template.orionBootstrapTabs.helpers({
+Template.orionTabs.helpers({
   items: function () {
     return this;
   }
 });
 
-Template.orionBootstrapTabs.events({
+Template.orionTabs.events({
   'click a': function () {
     this.onClick();
   }

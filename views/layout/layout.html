@@ -1,88 +1,63 @@
-<template name="orionBootstrapLayout">
-  <div class="orion-bootstrap-admin">
-    <div class="sidebar">
+<template name="orionLayout">
+  <div class="orion admin">
+    <div class="orion sidebar">
       {{# if dictionaryReady }}
-        {{> orionBootstrapSidebar }}
+        {{> orionSidebar }}
       {{/ if }}
     </div>
-    <div class="content">
-      {{> orionBootstrapHeader }}
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="admin-content">
-              {{# if dictionaryReady }}
-                {{> yield }}
-              {{/ if }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <style type="text/css">
-  html, body {
-    overflow: visible;
-  }
-  </style>
-</template>
-
-<template name="orionBootstrapOutAdminLayout">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-        <h1 class="text-center">{{> yield 'title' }}</h1>
-        {{> yield }}
+    <div class="orion content">
+      {{> orionHeader }}
+      <div class="orion container">
+        {{# if dictionaryReady }}
+          {{> yield }}
+        {{/ if }}
       </div>
     </div>
   </div>
 </template>
 
-<template name="orionBootstrapHeader">
-  <div class="navbar">
-    <div class="navbar-header">
-      <div class="navbar-header">
-        <a class="menu-toggle navbar-brand">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-    </div>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav navbar-right">
-      </ul>
-    </div>
-  </div>
-</template>
-
-<template name="orionBootstrapSmallContentOffset">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      {{> yield }}
-    </div>
-  </div>
-</template>
-<template name="orionBootstrapMediumContentOffset">
-  <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
-      {{> yield }}
-    </div>
-  </div>
-</template>
-<template name="orionBootstrapContentContainer">
-  <div class="well">
+<template name="orionOutAdminLayout">
+  <div class="orion container">
+    <h1 class="orion title center">{{> yield 'title' }}</h1>
     {{> yield }}
   </div>
 </template>
 
-<template name="orionBootstrapTitle">
-  <h1 class="title">  
+<template name="orionHeader">
+  <nav class="orion navigation menu">
+    <a class="orion menu toggle">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+</template>
+
+<template name="orionSmallContentOffset">
+  <div class="orion small content offset">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionMediumContentOffset">
+  <div class="orion medium content offset">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionContentContainer">
+  <div class="orion segment">
+    {{> yield }}
+  </div>
+</template>
+
+<template name="orionTitle">
+  <h1 class="orion title">
     {{> yield }}
   </h1>
   <hr>
 </template>
 
-<template name="orionBootstrapTabs">
+<template name="orionTabs">
   {{# each items }}
-    <a class="btn btn-xs {{ class }}">{{ title }}</a>
+    <a class="{{ class }}">{{ title }}</a>
   {{/ each }}
 </template>
