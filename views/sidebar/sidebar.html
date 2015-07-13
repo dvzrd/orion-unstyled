@@ -1,29 +1,29 @@
-<template name="orionBootstrapSidebar">
-  <ul class="sidebar-nav">
-    <li class="sidebar-brand">
-        <a href="{{ options 'homePath' '/' }}">
-            {{ options 'siteName' 'Admin' }}
+<template name="orionSidebar">
+  <ul class="orion sidebar navigation">
+    <li class="orion sidebar brand">
+        <a class="route link" href="{{ options 'homePath' '/' }}">
+          {{ options 'siteName' 'Admin' }}
         </a>
     </li>
     {{# if rolesIsReady }}
       {{# each adminLinks 'top' }}
-        {{> orionBootstrapSidebarLink }}
+        {{> orionSidebarLink }}
       {{/ each }}
       {{# each adminLinks 'medium' }}
-        {{> orionBootstrapSidebarLink }}
+        {{> orionSidebarLink }}
       {{/ each }}
       {{# each adminLinks 'user' }}
-        {{> orionBootstrapSidebarLink }}
+        {{> orionSidebarLink }}
       {{/ each }}
       {{# each adminLinks 'bottom' }}
-        {{> orionBootstrapSidebarLink }}
+        {{> orionSidebarLink }}
       {{/ each }}
     {{/ if }}
   </ul>
 </template>
 
-<template name="orionBootstrapSidebarLink">
+<template name="orionSidebarLink">
   <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-    <a href="{{ pathFor routeName }}">{{ title }}</a>
+    <a class="route link" href="{{ pathFor routeName }}">{{ title }}</a>
   </li>
 </template>
