@@ -1,4 +1,4 @@
-Template.orionBootstrapConfigUpdate.helpers({
+Template.orionConfigUpdate.helpers({
   getDataForTabs: function () {
     var categories = orion.config.getCategories();
     return categories.map(function (category) {
@@ -8,7 +8,7 @@ Template.orionBootstrapConfigUpdate.helpers({
           Session.set('configUpdateCurrentCategory', category);
         },
         class: function() {
-          return Session.get('configUpdateCurrentCategory') == category ? 'btn-default disabled': 'btn-primary';
+          return Session.get('configUpdateCurrentCategory') == category ? 'orion disabled button': 'orion primary button';
         }
       }
     });
