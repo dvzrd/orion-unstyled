@@ -9,7 +9,7 @@
 
       {{# if invitationId }}
 
-        <div class="orion success alert">
+        <div class="orion positive alert">
           Invitation created successfully
         </div>
 
@@ -42,7 +42,7 @@
             </label>
           </div>
 
-          <div class="orion input group">
+          <div class="orion fields">
             <label class="orion label">{{ i18n 'accounts.create.selectRoles' }}</label>
             {{# each roles }}
               <div class="orion checkbox">
@@ -54,24 +54,24 @@
             {{/ each }}
           </div>
 
-          <div class="orion input group">
+          <div class="orion field">
             <label for="email" class="orion label">{{ i18n 'accounts.create.email' }} {{# if createWithInvitation }}({{ i18n 'global.optional' }}){{/ if }}</label>
             <input type="email" class="orion input" name="email">
           </div>
 
           {{# unless createWithInvitation }}
 
-            <div class="orion input group">
+            <div class="orion field">
               <label for="name" class="orion label">{{ i18n 'accounts.schema.profile.name' }}</p>
               <input type="text" class="orion input" name="name">
             </div>
 
-            <div class="orion input group">
+            <div class="orion field">
               <label for="password" class="orion label">{{ i18n 'accounts.schema.password.new' }}</label>
               <input type="password" class="orion input" name="password">
             </div>
 
-            <div class="orion input group">
+            <div class="orion field">
               <label for="confirm" class="orion label">{{ i18n 'accounts.schema.password.confirm' }}</label>
               <input type="password" class="orion input" name="confirm">
             </div>
@@ -82,7 +82,7 @@
             <a class="orion button" href="{{ pathFor 'accounts.index' }}">{{ i18n 'global.cancel' }}</a>
             <button class="orion primary button">{{ i18n 'global.create' }}</button>
           </div>
-          
+
         </form>
       {{/ if }}
     {{/ Layout }}

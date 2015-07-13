@@ -1,45 +1,46 @@
-<template name="orionBootstrapRegisterWithInvitation">
+<template name="orionRegisterWithInvitation">
   {{# contentFor "title" }}
     {{ i18n 'accounts.registerWithInvitation.title' }}
   {{/ contentFor }}
   {{# if invitation }}
+
     {{# if error }}
-      <br>
-      <div class="alert alert-danger">
+      <div class="orion negative alert">
         {{ error }}
       </div>
-      <br>
     {{ else }}
-      <p class="text-center">
-        <label class="label label-danger">{{ invitation._id }}</label>
+      <p class="orion center text">
+        <label class="orion label">{{ invitation._id }}</label>
       </p>
-      <br>
     {{/ if }}
 
-    <form>
-      <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.email'}}</label>
+    <form class="orion invite register form">
+      <div class="orion field">
+        <label for="email" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.email'}}</label>
         {{# if invitation.email }}
-          <input class="form-control" value="{{ invitation.email }}" name="email" type="email" disabled=true>
+          <input type="email" class="orion input" name="email" value="{{ invitation.email }}" disabled=true>
         {{ else }}
-          <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.email'}}" name="email" type="email">
+          <input type="email" class="orion input" name="email" placeholder="{{i18n 'accounts.registerWithInvitation.fields.email'}}">
         {{/ if }}
       </div>
-      <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.name'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.name'}}" name="name" type="text">
+
+      <div class="orion field">
+        <label for="name" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.name'}}</label>
+        <input type="text" class="form-control" name="name" placeholder="{{i18n 'accounts.registerWithInvitation.fields.name'}}">
       </div>
-      <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.password'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.password'}}" name="password" type="password">
+
+      <div class="orion field">
+        <label for="password" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.password'}}</label>
+        <input type="password" class="orion input" name="password" placeholder="{{i18n 'accounts.registerWithInvitation.fields.password'}}">
       </div>
-      <div class="form-group">
-        <label>{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}" name="password-confirm" type="password">
+
+      <div class="orion field">
+        <label for="password-confirm" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}</label>
+        <input type="password" class="orion input" name="password-confirm" placeholder="{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}">
       </div>
-      <br>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block btn-lg">{{i18n 'accounts.registerWithInvitation.registerButton'}}</button>
+
+      <div class="orion actions">
+        <button class="orion primary button">{{i18n 'accounts.registerWithInvitation.registerButton'}}</button>
       </div>
     </form>
   {{/ if }}
