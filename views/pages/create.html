@@ -1,34 +1,37 @@
-<template name="orionBootstrapPagesCreate">
-  {{# Layout template="orionBootstrapMediumContentOffset" }}
-    {{# Layout template="orionBootstrapTitle" }}
+<template name="orionPagesCreate">
+  {{# Layout template="orionMediumContentOffset" }}
+    {{# Layout template="orionTitle" }}
       {{# if choosenTemplate }}
         {{ i18n 'pages.create.title' }} - {{ choosenTemplate.name }}
       {{ else }}
         {{ i18n 'pages.create.chooseTemplate' }}
       {{/ if }}
     {{/ Layout }}
-    {{# Layout template="orionBootstrapContentContainer" }}
+    {{# Layout template="orionContentContainer" }}
       {{# if choosenTemplate }}
         {{> quickForm collection="orion.pages.collection" schema=choosenTemplate.schema id="orionPagesCreateForm" type="insert"  buttonContent=false }}
-        <br>
-        <button class="btn btn-default cancel-btn">{{ i18n 'global.back' }}</button>
-        <button class="btn btn-primary submit-btn">{{ i18n 'global.create' }}</button>
+
+        <div class="orion actions">
+          <button class="orion button cancel-btn">{{ i18n 'global.back' }}</button>
+          <button class="orion primary button submit-btn">{{ i18n 'global.create' }}</button>
+        </div>
+
       {{ else }}
         {{# each templates }}
-          <div class="row">
-            <div class="col-sm-12">
-              <h4>{{ name }}</h4>
-              <p>{{ description }}</p>
-              <p>
-                <button class="btn btn-primary btn-xs template-choose">
-                  {{ i18n 'global.choose' }}
-                </button>
-              </p>
+          <div class="orion template">
+            <h4 class="orion title">{{ name }}</h4>
+            <p class="orion text">{{ description }}</p>
+            <div class="orion action">
+              <button class="orion primary button template-choose">
+                {{ i18n 'global.choose' }}
+              </button>
             </div>
           </div>
         {{/ each }}
-        <hr>
-        <a href="{{ pathFor 'pages.index' }}" class="btn btn-default">{{ i18n 'global.back' }}</a>
+
+        <div class="orion action">
+          <a href="{{ pathFor 'pages.index' }}" class="orion button">{{ i18n 'global.back' }}</a>
+        </div>
       {{/ if }}
     {{/ Layout }}
   {{/ Layout }}
