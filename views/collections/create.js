@@ -1,11 +1,11 @@
-Template.orionBootstrapCollectionsCreate.events({
-  'click .create-btn': function () {
-    $('#orionBootstrapCollectionsCreateForm').submit();
+Template.orionCollectionsCreate.events({
+  'click .orion.create.button': function () {
+    $('#orionCollectionsCreateForm').submit();
   }
 });
 
 
-AutoForm.addHooks('orionBootstrapCollectionsCreateForm', {
+AutoForm.addHooks('orionCollectionsCreateForm', {
   onSuccess: function() {
     Router.go(this.collection.indexPath());
   }

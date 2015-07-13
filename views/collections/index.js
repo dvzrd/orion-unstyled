@@ -1,4 +1,4 @@
-Template.orionBootstrapCollectionsIndex.events({
+Template.orionCollectionsIndex.events({
   'click tr': function(event) {
     if (!$(event.target).is('td')) return;
     var collection = Template.currentData().collection;
@@ -13,18 +13,18 @@ Template.orionBootstrapCollectionsIndex.events({
   }
 });
 
-Template.orionBootstrapCollectionsIndex.onRendered(function() {
+Template.orionCollectionsIndex.onRendered(function() {
   this.autorun(function () {
     Template.currentData();
-    Session.set('orionBootstrapCollectionsIndex_showTable', false);
+    Session.set('orionCollectionsIndex_showTable', false);
     Meteor.defer(function () {
-      Session.set('orionBootstrapCollectionsIndex_showTable', true);
+      Session.set('orionCollectionsIndex_showTable', true);
     });
   });
 })
 
-Template.orionBootstrapCollectionsIndex.helpers({
+Template.orionCollectionsIndex.helpers({
   showTable: function () {
-    return Session.get('orionBootstrapCollectionsIndex_showTable');
+    return Session.get('orionCollectionsIndex_showTable');
   }
 });

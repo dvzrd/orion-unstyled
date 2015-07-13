@@ -1,10 +1,10 @@
-Template.orionBootstrapCollectionsUpdate.events({
-  'click .save-btn': function () {
-    $('#orionBootstrapCollectionsUpdateForm').submit();
+Template.orionCollectionsUpdate.events({
+  'click .orion.save.button': function () {
+    $('#orionCollectionsUpdateForm').submit();
   }
 });
 
-AutoForm.addHooks('orionBootstrapCollectionsUpdateForm', {
+AutoForm.addHooks('orionCollectionsUpdateForm', {
   onSuccess: function() {
     Router.go(this.collection.indexPath());
   }
