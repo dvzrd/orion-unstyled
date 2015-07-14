@@ -27,25 +27,22 @@
     <h2 class="orion title">{{ i18n 'accounts.update.sections.roles.title' }}</h2>
 
     <div class="orion segment">
-
       <form class="orion roles form">
         <label class="orion label">{{ i18n 'accounts.update.sections.roles.selectRoles' }}</label>
         {{# each roles }}
           <div class="orion checkbox">
             <label class="orion label">
               {{# if hasRole this }}
-                <input type="checkbox" class="orion input" role="{{ this }}" checked>
-                <code class="orion code">{{ this }}</code>
+                <input type="checkbox" class="orion input" role="{{ this }}" checked><code>{{ this }}</code>
               {{ else }}
-                <input type="checkbox" class="orion input" role="{{ this }}">
-                <code class="orion code">{{ this }}</code>
+                <input type="checkbox" class="orion input" role="{{ this }}"> <code>{{ this }}</code>
               {{/ if }}
             </label>
           </div>
         {{/ each }}
 
         <div class="orion action">
-          <button class="btn btn-primary btn-save">{{ i18n 'global.save' }}</button>
+          <button class="orion primary button btn-save">{{ i18n 'global.save' }}</button>
         </div>
       </form>
     </div>
@@ -65,14 +62,17 @@
 
     <h2 class="orion title">{{ i18n 'accounts.update.sections.deleteUser.title' }}</h2>
 
-    <div class="orion segment">
+    <div class="segment">
       <p class="orion negative message">
         {{ i18n 'accounts.update.sections.deleteUser.advice' }}
       </p>
 
-      <button id="btnDeleteUser" class="orion negative button" user="{{user._id}}">
-        {{ i18n 'accounts.update.sections.deleteUser.button' }}
-      </button>
+      <div class="orion action">
+        <button id="btnDeleteUser" class="orion negative button" user="{{user._id}}">
+          {{ i18n 'accounts.update.sections.deleteUser.button' }}
+        </button>
+      </div>
     </div>
+
   {{/ Layout }}
 </template>
