@@ -25,8 +25,8 @@ Package.onUse(function(api) {
   ]);
 
   api.addFiles([
-    'init.js',
-    'tabular.js'
+    'lib/init.js',
+    'lib/tabular.js'
   ]);
 
   api.addFiles([
