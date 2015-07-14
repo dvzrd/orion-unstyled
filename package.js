@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'orionjs:unstyled',
-  summary: 'Unstyled theme for orion.',
-  version: '1.1.2',
-  git: 'https://github.com/orionjs/orion'
+  name: 'dvz:orion-unstyled',
+  summary: 'Unstyled admin theme for orion.',
+  version: '0.0.1',
+  git: 'https://github.com/amazingBastard/orion-unstyled'
 });
 
 Package.onUse(function(api) {
