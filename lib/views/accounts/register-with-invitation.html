@@ -1,6 +1,6 @@
 <template name="orionRegisterWithInvitation">
   {{# contentFor "title" }}
-    {{ i18n 'accounts.registerWithInvitation.title' }}
+    {{ i18n 'accounts.register.title' }}
   {{/ contentFor }}
   {{# if invitation }}
 
@@ -16,31 +16,31 @@
 
     <form class="orion invite register form">
       <div class="orion field">
-        <label for="email" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.email'}}</label>
+        <label for="email" class="orion label">{{i18n 'accounts.register.fields.email'}}</label>
         {{# if invitation.email }}
           <input type="email" class="orion input" name="email" value="{{ invitation.email }}" disabled=true>
         {{ else }}
-          <input type="email" class="orion input" name="email" placeholder="{{i18n 'accounts.registerWithInvitation.fields.email'}}">
+          <input type="email" class="orion input" name="email" placeholder="{{i18n 'accounts.register.fields.email'}}">
         {{/ if }}
       </div>
 
       <div class="orion field">
-        <label for="name" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.name'}}</label>
-        <input type="text" class="form-control" name="name" placeholder="{{i18n 'accounts.registerWithInvitation.fields.name'}}">
+        <label for="name" class="orion label">{{i18n 'accounts.register.fields.name'}}</label>
+        <input type="text" class="form-control" name="name" placeholder="{{i18n 'accounts.register.fields.name'}}">
       </div>
 
       <div class="orion field">
-        <label for="password" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.password'}}</label>
-        <input type="password" class="orion input" name="password" placeholder="{{i18n 'accounts.registerWithInvitation.fields.password'}}">
+        <label for="password" class="orion label">{{i18n 'accounts.register.fields.password'}}</label>
+        <input type="password" class="orion input" name="password" placeholder="{{i18n 'accounts.register.fields.password'}}">
       </div>
 
       <div class="orion field">
-        <label for="password-confirm" class="orion label">{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}</label>
-        <input type="password" class="orion input" name="password-confirm" placeholder="{{i18n 'accounts.registerWithInvitation.fields.confirmPassword'}}">
+        <label for="password-confirm" class="orion label">{{i18n 'accounts.register.fields.confirmPassword'}}</label>
+        <input type="password" class="orion input" name="password-confirm" placeholder="{{i18n 'accounts.register.fields.confirmPassword'}}">
       </div>
 
       <div class="orion actions">
-        <button class="orion primary button">{{i18n 'accounts.registerWithInvitation.registerButton'}}</button>
+        <button class="orion primary button">{{i18n 'accounts.register.registerButton'}}</button>
       </div>
     </form>
   {{/ if }}
