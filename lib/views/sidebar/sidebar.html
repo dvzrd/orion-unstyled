@@ -1,29 +1,43 @@
 <template name="orionSidebar">
   <ul class="orion sidebar navigation">
-    <li class="orion sidebar brand">
-        <a class="route link" href="{{ options 'homePath' '/' }}">
-          {{ options 'siteName' 'Admin' }}
-        </a>
+    <li class="orion brand">
+      <a class="route link" href="{{ options 'homePath' '/' }}">
+        {{ options 'siteName' 'Admin' }}
+      </a>
     </li>
-    {{# if rolesIsReady }}
-      {{# each adminLinks 'top' }}
-        {{> orionSidebarLink }}
-      {{/ each }}
-      {{# each adminLinks 'medium' }}
-        {{> orionSidebarLink }}
-      {{/ each }}
-      {{# each adminLinks 'user' }}
-        {{> orionSidebarLink }}
-      {{/ each }}
-      {{# each adminLinks 'bottom' }}
-        {{> orionSidebarLink }}
-      {{/ each }}
-    {{/ if }}
+    {{# each adminLinks }}
+      {{> orionSidebarLink }}
+    {{/ each }}
   </ul>
 </template>
 
 <template name="orionSidebarLink">
-  <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-    <a class="route link" href="{{ pathFor routeName }}">{{ title }}</a>
-  </li>
+  {{# if childs }}
+    <li class="orion item">
+      {{# if routeName }}
+        <a class="orion collapse-link-right" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
+          <span class="caret"></span>
+        </a>
+        <a class="route link" href="{{ pathFor routeName }}">
+          {{ title }}
+        </a>
+      {{ else }}
+        <a data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
+          {{ title }}
+          <span class="caret"></span>
+        </a>
+      {{/ if }}
+      <div class="orion collapse" id="admin-links-{{ identifier }}">
+        <ul class="orion child-links">
+          {{# each childs }}
+            {{> orionSidebarLink }}
+          {{/ each }}
+        </ul>
+      </div>
+    </li>
+  {{ else }}
+    <li class="orion item {{ isActiveRoute regex=activeRouteRegex }}">
+      <a class="route link" href="{{ pathFor routeName }}">{{ title }}</a>
+    </li>
+  {{/ if }}
 </template>
