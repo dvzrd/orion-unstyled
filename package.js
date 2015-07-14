@@ -14,7 +14,7 @@ Package.onUse(function(api) {
     'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
     'aldeed:tabular@1.1.0',
-    'useraccounts:unstyled'
+    'useraccounts:unstyled@1.11.1'
   ]);
 
   api.imply([
