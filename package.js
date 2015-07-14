@@ -15,19 +15,19 @@ Package.onUse(function(api) {
     'aldeed:autoform@5.1.2',
     'aldeed:tabular@1.1.0',
     'useraccounts:unstyled'
-    ]);
+  ]);
 
   api.imply([
     'orionjs:core',
     'iron:layout',
     'aldeed:autoform',
     'useraccounts:unstyled'
-    ]);
+  ]);
 
   api.addFiles([
     'init.js',
     'tabular.js'
-    ]);
+  ]);
 
   api.addFiles([
     'views/layout/layout.html',
@@ -62,7 +62,7 @@ Package.onUse(function(api) {
     'views/pages/update.html',
     'views/pages/delete.html',
     'views/pages/pages.js',
-    ], 'client');
+  ], 'client');
 
   api.export('orion');
 });
