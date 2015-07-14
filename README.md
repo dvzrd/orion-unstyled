@@ -5,7 +5,7 @@ except with bootstrap markup removed and most of the class names changed. This p
 
 ## Installation
 
-While in your metepr app's root, run the following from the command line:
+While in your meteor app's root, run the following from the command line:
 
 ```
 $ meteor add dvz:orion-unstyled
