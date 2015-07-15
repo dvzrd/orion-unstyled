@@ -5,16 +5,16 @@
     {{/ Layout }}
     {{# Layout template="orionContentContainer" }}
 
-      <p class="orion message">
+      <nav class="orion tabs">
         {{> reactiveTemplate template="tabs" data=getDataForTabs }}
-      </p>
+      </nav>
 
       {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
         {{# if currentCategory }}
           {{> afQuickFields name=currentCategory }}
         {{/ if }}
 
-        <div class="orion action right">
+        <div class="orion actions right">
           <button class="orion primary button">{{ i18n 'global.save' }}</button>
         </div>
 

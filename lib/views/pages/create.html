@@ -18,10 +18,10 @@
 
       {{ else }}
         {{# each templates }}
-          <div class="orion template">
+          <div class="orion page">
             <h4 class="orion title">{{ name }}</h4>
             <p class="orion text">{{ description }}</p>
-            <div class="orion action">
+            <div class="orion actions">
               <button class="orion primary button template-choose">
                 {{ i18n 'global.choose' }}
               </button>
@@ -29,7 +29,7 @@
           </div>
         {{/ each }}
 
-        <div class="orion action">
+        <div class="orion actions">
           <a href="{{ pathFor 'pages.index' }}" class="orion button">{{ i18n 'global.back' }}</a>
         </div>
       {{/ if }}

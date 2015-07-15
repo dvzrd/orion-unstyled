@@ -7,7 +7,7 @@
     {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
       {{> afQuickField name='emails' }}
 
-      <div class="orion action">
+      <div class="orion actions">
         <button class="orion primary button">{{ i18n 'global.save' }}</button>
       </div>
     {{/ autoForm }}
@@ -18,7 +18,7 @@
       {{# autoForm id="accountsUpdateProfileForm" schema=profileSchema type="method-update" doc=user meteormethod="orionAccountsUpdateProfile" }}
         {{> afQuickFields name='profile' }}
 
-        <div class="orion action">
+        <div class="orion actions">
           <button class="orion primary button">{{ i18n 'global.save' }}</button>
         </div>
       {{/ autoForm }}
@@ -41,7 +41,7 @@
           </div>
         {{/ each }}
 
-        <div class="orion action">
+        <div class="orion actions">
           <button class="orion primary button btn-save">{{ i18n 'global.save' }}</button>
         </div>
       </form>
@@ -54,7 +54,7 @@
         {{> afQuickField name='password' }}
         {{> afQuickField name='confirm' }}
 
-        <div class="orion action">
+        <div class="orion actions">
           <button class="orion primary button">{{ i18n 'global.save' }}</button>
         </div>
       {{/ autoForm }}
@@ -62,12 +62,12 @@
 
     <h2 class="orion title">{{ i18n 'accounts.update.sections.deleteUser.title' }}</h2>
 
-    <div class="segment">
+    <div class="orion segment">
       <p class="orion negative message">
         {{ i18n 'accounts.update.sections.deleteUser.advice' }}
       </p>
 
-      <div class="orion action">
+      <div class="orion actions">
         <button id="btnDeleteUser" class="orion negative button" user="{{user._id}}">
           {{ i18n 'accounts.update.sections.deleteUser.button' }}
         </button>

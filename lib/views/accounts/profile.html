@@ -8,7 +8,7 @@
       {{# autoForm schema=getSchema id="updateMyProfileForm" collection="Meteor.users" type="update" doc=getDoc }}
         {{> afQuickFields name='profile' }}
 
-        <div class="orion right text">
+        <div class="orion actions right">
           <a class="orion button" href="{{ pathFor 'myAccount.index' }}">{{ i18n 'global.cancel' }}</a>
           <button class="orion primary button">{{ i18n 'global.save' }}</button>
         </div>

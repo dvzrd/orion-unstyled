@@ -7,14 +7,14 @@
 
     {{# Layout template="orionContentContainer" }}
 
-      <div class="orion profile">
+      <div class="orion profile segment">
         {{# if currentUser.profile.picture }}
           <div class="orion image container">
             <img class="orion image" src="{{ currentUser.profile.picture.url }}">
           </div>
         {{/ if }}
 
-        <div class="orion user container">
+        <div class="orion user">
           <p class="orion text">
             <strong>{{ currentUser.profile.name }}</strong>
           </p>
