@@ -1,7 +1,7 @@
 Package.describe({
   name: 'dvz:orion-unstyled',
   summary: 'Unstyled admin theme for orion.',
-  version: '0.0.5',
+  version: '0.0.6',
   git: 'https://github.com/amazingBastard/orion-unstyled'
 });
 
