@@ -28,6 +28,23 @@
     <a class="orion toggle">
       <i class="fa fa-bars"></i>
     </a>
+    {{# with getAdminLink 'myAccount' }}
+      <div class="orion dropdown" id="user-profile-dropdown">
+        <a href="#" class="dropdown toggle">
+          {{ title }} <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="orion dropdown menu">
+          {{# each childs }}
+            <li class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item">
+              <a href="{{ RouterLayerPathFor routeName }}">{{ title }}</a>
+            </li>
+          {{/ each }}
+          <li class="item">
+            <a href="#" class="logout"><i class="fa fa-sign-out"></i> {{ i18n 'global.logout' }}</a>
+          </li>
+        </ul>
+      </div>
+    {{/ with }}
   </nav>
 </template>
 
