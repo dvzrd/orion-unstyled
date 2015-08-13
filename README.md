@@ -14,3 +14,7 @@ $ meteor add dvz:orion-unstyled
 ## Package Details
 
 This package does not need any framework dependencies. It should add ```useraccounts:unstyled``` so you would need to style your login page as well. Since Summernote relies on bootstrap, you would need to use ```orionjs:froala```.
+
+## Roadmap
+
+Planning on working on creating an unstyled version of autoform without boostrap class names.
