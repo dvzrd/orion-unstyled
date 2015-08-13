@@ -1,7 +1,7 @@
 Package.describe({
   name: 'dvz:orion-unstyled',
   summary: 'Unstyled admin theme for orion.',
-  version: '0.0.6',
+  version: '0.0.7',
   git: 'https://github.com/amazingBastard/orion-unstyled'
 });
 
@@ -10,16 +10,14 @@ Package.onUse(function(api) {
 
   api.use([
     'meteor-platform',
-    'orionjs:core@1.1.0',
-    'iron:layout@1.0.7',
-    'aldeed:autoform@5.1.2',
+    'orionjs:core@1.4.0',
+    'aldeed:autoform@5.4.0',
     'aldeed:tabular@1.1.0',
     'useraccounts:unstyled@1.11.1'
   ]);
 
   api.imply([
     'orionjs:core',
-    'iron:layout',
     'aldeed:autoform',
     'useraccounts:unstyled'
   ]);
