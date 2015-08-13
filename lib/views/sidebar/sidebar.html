@@ -16,15 +16,15 @@
     <li class="orion item">
       {{# if routeName }}
         <a class="orion collapse-link-right" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
-          <span class="caret"></span>
+          <i class="fa fa-caret-down"></i>
         </a>
-        <a class="route link" href="{{ pathFor routeName }}">
+        <a class="route link" href="{{ RouterLayerPathFor routeName }}">
           {{ title }}
         </a>
       {{ else }}
         <a data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
           {{ title }}
-          <span class="caret"></span>
+          <i class="fa fa-caret-down"></i>
         </a>
       {{/ if }}
       <div class="orion collapse" id="admin-links-{{ identifier }}">
@@ -36,8 +36,8 @@
       </div>
     </li>
   {{ else }}
-    <li class="orion item {{ isActiveRoute regex=activeRouteRegex }}">
-      <a class="route link" href="{{ pathFor routeName }}">{{ title }}</a>
+    <li class="orion item {{ RouterLayerIsActiveRoutePartial activeRouteRegex }}">
+      <a class="route link" href="{{ RouterLayerPathFor routeName }}">{{ title }}</a>
     </li>
   {{/ if }}
 </template>
