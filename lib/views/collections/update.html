@@ -8,11 +8,11 @@
         {{> quickForm collection=collection doc=item id="orionCollectionsUpdateForm" type="update" buttonContent=false omitFields=collection.getHiddenFields }}
 
         <div class="orion actions right">
+          <a class="orion primary save button">{{ i18n 'global.save' }}</a>
           <a class="orion button" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
           {{# if item.canShowRemove }}
             <a class="orion negative button" href="{{ collection.deletePath item._id }}">{{i18n 'global.delete' }}</a>
           {{/ if }}
-          <a class="orion primary save button">{{ i18n 'global.save' }}</a>
         </div>
       {{/ if }}
     {{/ Layout }}
