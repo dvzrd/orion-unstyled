@@ -5,7 +5,7 @@
         {{ i18n 'collections.create.title' collection.singularName }}
       {{/ Layout }}
       {{# Layout template="orionContentContainer" }}
-        {{> quickForm collection=collection id="orionCollectionsCreateForm" type="insert" buttonContent=false }}
+        {{> quickForm collection=collection id="orionCollectionsCreateForm" type="insert" buttonContent=false omitFields=collection.getHiddenFields }}
 
         <div class="orion actions right">
           <a class="orion button" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>

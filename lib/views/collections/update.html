@@ -5,7 +5,7 @@
     {{/ Layout }}
     {{# Layout template="orionContentContainer" }}
       {{# if item.canShowUpdate }}
-        {{> quickForm collection=collection doc=item id="orionCollectionsUpdateForm" type="update" buttonContent=false }}
+        {{> quickForm collection=collection doc=item id="orionCollectionsUpdateForm" type="update" buttonContent=false omitFields=collection.getHiddenFields }}
 
         <div class="orion actions right">
           <a class="orion button" href="{{ collection.indexPath }}">{{ i18n 'global.cancel' }}</a>
