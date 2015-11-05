@@ -9,7 +9,7 @@
 
 			  <div class="orion actions right">
 				  <a class="orion button cancel-btn" href="{{ RouterLayerPathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
-				  <a class="orion negative button delete-btn" href="{{ RouterLayerPathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
+				  <a class="orion negative button delete-btn" href="{{ RouterLayerPathFor 'pages.delete' _id=item._id }}">{{ i18n 'global.delete' }}</a>
 				  <a class="orion primary button save-btn" href="#">{{ i18n 'global.save' }}</a>
 			  </div>
 		  {{/ if }}
